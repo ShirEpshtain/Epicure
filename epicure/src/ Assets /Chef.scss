@@ -1,0 +1,30 @@
+.chef-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .chef-image {
+    width: 350px;
+    height: 285px;
+    position: relative;
+    left: 10px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .chef-description {
+    position: relative;
+    align-items: center; 
+    left: 10px;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 28px;
+    letter-spacing: 1.25px;
+    text-align: justified;
+    margin-top: 10px;
+  }
+  

@@ -1,0 +1,10 @@
+{
+      "id": 2,
+      "name": "EYAL SHANI",
+      "private": "YOSSI",
+      "image": "../images/Chefs/EyalS.jpeg",
+      "description": "Eyal Tovia Mordechai Shani is an Israeli chef. Established more then 10 great restaurants . As of 2010, participates as a judge in Keshet 12's Israeli Master Chef. He is known for his love for fresh and local ingredients and is considered one of the leading chefs in Israel.",
+      "restaurants": [
+        {"name":"miznon", "image":"../images/chefs/EyalS/miznon.jpeg"}
+      ]
+    }

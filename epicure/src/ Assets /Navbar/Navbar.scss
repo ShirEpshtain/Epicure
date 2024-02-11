@@ -1,0 +1,21 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: #f9f4ea; /* Background color for navbar */
+  }
+  
+  .left-item img {
+    margin-right: auto; /* Push Hamburger.png to the left */
+  }
+  
+  .right-items img {
+    margin-left: 10px; /* Add spacing between Search, Vector, and Bag */
+  }
+  
+  .center-item img {
+    /* Center About.png */
+    margin: 0 auto;
+  }
+  

@@ -1,0 +1,180 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Claro",
+      "image": "../images/Restaurants/claro.png",
+      "chef": "Ran Shmueli",
+      "openingHours": [
+        { "day": 0, "open": "10:00", "close": "18:00" },
+        { "day": 1, "open": "10:00", "close": "18:00" },
+        { "day": 2, "open": "10:00", "close": "18:00" },
+        { "day": 3, "open": "10:00", "close": "18:00" },
+        { "day": 4, "open": "10:00", "close": "18:00" },
+        { "day": 5, "open": "10:00", "close": "18:00" },
+        { "day": 6, "open": "10:00", "close": "18:00" }
+      ],
+      "openingDay": "2024-02-05",
+      "dishes": {
+        "breakfast": [],
+        "launch": [],
+        "dinner": []
+      },
+      "rating": 3,
+      "address": "Ha'arbaa st 23, Tel Aviv-Yafo"
+    },
+    {
+      "id" : 2,
+      "name": "Minna Tomei",
+      "image": "../images/Restaurants/minna_tomei.png", 
+      "chef": "Yossi Shitrit",
+      "openingHours" :  [
+          { "day": 0, "open": "00:00", "close": "23:59" },
+          { "day": 1, "open": "00:00", "close": "23:59"},
+          { "day": 2, "open": "00:00", "close": "23:59" },
+          { "day": 3, "open": "00:00", "close": "23:59" },
+          { "day": 4, "open": "00:00", "close": "23:59" },
+          { "day": 5, "open": "00:00", "close": "23:59" },
+          { "day": 6, "open": "00:00", "close": "23:59" }
+        ],
+      "openingDay" : "2023-12-05",
+      "dishes" : {
+          "breakfast" :[],
+          "launch" :[],
+          "dinner" :[]
+      },
+      "rating" : 5,
+      "address": "Ha'Arbaa St 17, Tel Aviv-Yafo"
+  },
+  {
+      "id" : 3,
+      "name": "Calata 15",
+      "image": "../images/Restaurants/calata.png", 
+      "chef": "Rachel & Andrea Meggie",
+      "openingHours" :  [
+          { "day": 0, "open": "10:00", "close": "18:00" },
+          { "day": 1, "open": null, "close": null},
+          { "day": 2, "open": "10:00", "close": "18:00" },
+          { "day": 3, "open": "10:00", "close": "18:00" },
+          { "day": 4, "open": "10:00", "close": "18:00" },
+          { "day": 5, "open": "10:00", "close": "18:00" },
+          { "day": 6, "open": null, "close": null }
+        ],
+      "openingDay" : "2024-01-05",
+      "dishes" : {
+          "breakfast" :[],
+          "launch" :[],
+          "dinner" :[]
+      },
+      "rating" : 4,
+      "address": "Medinat ha-Yehudim St 89, Herzliya"
+  },
+  {
+      "id" : 4,
+      "name": "Mashya",
+      "image": "../images/Restaurants/mashya.jpeg", 
+      "chef": "Yossi Shitrit",
+      "openingHours" :  [
+          { "day": 0, "open": "10:00", "close": "18:00" },
+          { "day": 1, "open": "10:00", "close": "18:00" },
+          { "day": 2, "open": null, "close": null},
+          { "day": 3, "open": "10:00", "close": "18:00" },
+          { "day": 4, "open": "10:00", "close": "18:00" },
+          { "day": 5, "open": "10:00", "close": "18:00" },
+          { "day": 6, "open": null, "close": null }
+        ],
+      "openingDay" : "2022-01-05",
+      "dishes" : {
+          "breakfast" :[],
+          "launch" :[],
+          "dinner" :[]
+      },
+      "rating" : 5,
+      "address": "Mendele Mokher Sfarim St 5, Tel Aviv-Yafo"
+  },
+  {
+      "id" : 5,
+      "name": "a",
+      "image": "../images/Restaurants/a.jpeg", 
+      "chef": "Yuval Ben Neriya",
+      "openingHours" :  [
+          { "day": 0, "open": "10:00", "close": "18:00" },
+          { "day": 1, "open": "10:00", "close": "18:00" },
+          { "day": 2, "open": null, "close": null},
+          { "day": 3, "open": "10:00", "close": "18:00" },
+          { "day": 4, "open": "10:00", "close": "18:00" },
+          { "day": 5, "open": "10:00", "close": "18:00" },
+          { "day": 6, "open": null, "close": null }
+        ],
+      "openingDay" : "2023-07-02",
+      "dishes" : {
+          "breakfast" :[],
+          "launch" :[],
+          "dinner" :[]
+      },
+      "rating" : 1,
+      "address": "Derech Menachem Begin 121, Tel Aviv-Yafo"
+  },
+
+  {
+      "id" : 6,
+      "name": "HaMiznon",
+      "image": "../images/Restaurants/miznon.jpeg", 
+      "chef": "Eyal Shani",
+      "openingHours" :  [
+          { "day": 0, "open": "10:00", "close": "18:00" },
+          { "day": 1, "open": "10:00", "close": "18:00" },
+          { "day": 2, "open": null, "close": null},
+          { "day": 3, "open": "10:00", "close": "18:00" },
+          { "day": 4, "open": "10:00", "close": "18:00" },
+          { "day": 5, "open": "10:00", "close": "18:00" },
+          { "day": 6, "open": null, "close": null }
+        ],
+      "openingDay" : "2024-01-01",
+      "dishes" : {
+          "breakfast" :[],
+          "launch" :[],
+          "dinner" :[]
+      },
+      "rating" : 4,
+      "address": [{"address" : "Shlomo Ibn Gabirol St 23" , "branch" : "Ibn Gabirol"} , {"address" :"Aluf Kalman Magen St 3, Tel Aviv-Jaffa" , "branch":"Sarona"} , {"address" :"HaNechoshet St 1, Tel Aviv-Jaffa" , "branch":"Ramat HaHayal"}]
+  }
+  ],
+  "dishes": [
+    {
+      "id": 1,
+      "name": "Pad Ki Mao",
+      "image": "../images/Dishes/padKiMao.jpeg",
+      "ingredients": "Shrimps, Glass <br> Noodles, Kemiri Nuts, <br> Shallots, <br> Lemon Grass, Magic <br> Chili Brown Coconut",
+      "price": 88,
+      "icons": ["spicy"]
+    }, {
+      "id" : 2,
+      "name" : "Garbanzo Frito",
+      "image" : "../images/Dishes/garbanzoFrito.jpeg",
+      "ingredients" : "Polenta fingers, <br> veal cheek, magic <br> chili cured lemon cream, yellow laksa",
+      "price" : 98,
+      "icons" : ["spicy"]
+  },
+  {
+      "id" : 3,
+      "name" : "Smoked Pizza",
+      "image" : "../images/Dishes/smokedPizza.jpeg",
+      "ingredients" : "Basil dough, <br> cashew 'butter', demi- <br> glace, bison & radish",
+      "price" : 65,
+      "icons" : ["vegan"]
+  }
+  ],
+  "chefs": [
+    {
+      "id": 1,
+      "name": "YOSSI SHITRIT",
+      "private": "YOSSI",
+      "image": "../images/Chefs/YossiS.png",
+      "description": "Chef Yossi Shitrit has been living and <br> breathing his culinary dreams for more <br> than two decades, including running <br> the kitchen in his first restaurant, the <br> fondly-remembered Violet, located in <br> Moshav Udim. Shitrit's creativity and <br> culinary acumen born of long <br> experience are expressed in the every <br> detail of each and every dish.",
+      "restaurants": [
+        {"name":"Onza", "image":"../images/chefs/YossiS/onza.jpeg"}, {"name":"Mashya", "image":"../images/chefs/YossiS/mashya.jpeg"}, {"name":"HIBA" , "image":"../images/chefs/YossiS/hiba.jpeg"}
+      ]
+    }
+  ]
+}
