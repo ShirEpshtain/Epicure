@@ -1,5 +1,5 @@
 import React from "react";
-import "../ Assets /Footer/Footer.scss";
+import "../../ Assets /Footer/Footer.scss";
 
 const HomePageFooter: React.FC = () => {
   return (

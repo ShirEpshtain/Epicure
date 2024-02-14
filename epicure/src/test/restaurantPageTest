@@ -1,0 +1,106 @@
+import React, { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { Restaurant } from "../interfaces/Restaurant";
+import { Dish } from "../interfaces/RestuarantDish";
+import "../ Assets /RestaurantPage.scss";
+
+interface Props {
+  restaurantsData: { restaurants: Restaurant[] };
+}
+
+const RestaurantPage: React.FC<Props> = ({ restaurantsData }) => {
+  const { id } = useParams<{ id: string }>();
+  const [selectedMeal, setSelectedMeal] = useState<"breakfast" | "lunch" | "dinner">("breakfast");
+
+  const restaurant: Restaurant | undefined = restaurantsData.restaurants.find(
+    (restaurant) => restaurant.id.toString() === id
+  );
+
+  if (!restaurant) {
+    return <div>Restaurant not found</div>;
+  }
+
+  const isOpenNow = () => {
+    const currentDay = new Date().getDay();
+    const currentTime = new Date().toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    const todayOpeningHours = restaurant.openingHours[currentDay];
+    return (
+      todayOpeningHours &&
+      todayOpeningHours.open !== null &&
+      todayOpeningHours.close !== null &&
+      todayOpeningHours.open <= currentTime &&
+      todayOpeningHours.close >= currentTime
+    );
+  };
+
+  const handleMealChange = (meal: "breakfast" | "lunch" | "dinner") => {
+    setSelectedMeal(meal);
+  };
+
+  return (
+    <div>
+      <img src={restaurant.image} alt={restaurant.name} className="restaurant-image" />
+      <h3>{restaurant.name}</h3>
+      <h2>{restaurant.chef}</h2>
+      {isOpenNow() ? (
+        <p>
+          <span role="img" aria-label="Open">
+            ⏰
+          </span>{" "}
+          Open Now
+        </p>
+      ) : (
+        <p>
+          <span role="img" aria-label="Closed">
+            ⏰
+          </span>{" "}
+          Closed Now
+        </p>
+      )}
+      <div className="meals-buttons">
+        <button
+          onClick={() => handleMealChange("breakfast")}
+          className={selectedMeal === "breakfast" ? "active" : ""}
+        >
+          Breakfast
+        </button>
+        <button
+          onClick={() => handleMealChange("lunch")}
+          className={selectedMeal === "lunch" ? "active" : ""}
+        >
+          Lunch
+        </button>
+        <button
+          onClick={() => handleMealChange("dinner")}
+          className={selectedMeal === "dinner" ? "active" : ""}
+        >
+          Dinner
+        </button>
+      </div>
+      <div>
+      {restaurant.dishes[selectedMeal].map((dish) => (
+          <div className="restaurant-dish-card" key={dish.id}>
+            <img src={dish.image} alt={dish.name} />
+            <div>
+              <h3 style={{ fontWeight: "bold" }}>
+                <Link to={`/dish/${selectedMeal}/${dish.id}`}>{dish.name}</Link>
+              </h3>
+              <h2>{dish.ingredients}</h2>
+              <div className="price-line">
+                <h3>₪{dish.price}</h3>
+                <div className="line"></div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <br /><br />
+      <hr style={{ border: "1px solid rgba(0, 0, 0, 0.05)" }} />
+    </div>
+  );
+};
+
+export default RestaurantPage;

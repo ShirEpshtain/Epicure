@@ -1,0 +1,58 @@
+import React from "react";
+import { useParams } from "react-router-dom";
+import { Restaurant } from "../interfaces/Restaurant";
+import { Dish } from "../interfaces/RestuarantDish";
+
+interface Props {
+  restaurants: Restaurant[];
+}
+
+const DishPage: React.FC<Props> = ({ restaurants }) => {
+  const { id, mealType } = useParams<{ id: string; mealType: string }>();
+
+  // Provide a default value for mealType if it's undefined
+  const safeMealType = mealType || "breakfast";
+
+  const findDish = (restaurantId: string, mealType: string, id: string): Dish | undefined => {
+    // Find the correct restaurant object
+    const restaurant = restaurants.find((r) => r.id.toString() === restaurantId);
+    if (!restaurant) return undefined;
+
+    // Find the dish based on meal type
+    return restaurant.dishes[mealType as keyof typeof restaurant.dishes].find((d) => d.id.toString() === id);
+  };
+
+  const dish = findDish(String(id), safeMealType, String(id))!; // Non-null assertion operator
+
+  console.log(dish.image)
+
+  return (
+    <div className="dish-page-container" key={dish.id}>
+      {/* <div className="dish-details" > */}
+        <img src={dish.image} alt={dish.name} />
+        <h2 className="dish-name">{dish.name}</h2>
+        <p className="dish-ingredients">{dish.ingredients}</p>
+      {/* </div> */}
+      <div className="options">
+        <div className="option">
+          <h3>Choose a Side:</h3>
+          <ul>
+            {dish.sides.map((side, index) => (
+              <li key={index}>{side}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="option">
+          <h3>Changes:</h3>
+          <ul>
+            {dish.changes.map((change, index) => (
+              <li key={index}>{change}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DishPage;

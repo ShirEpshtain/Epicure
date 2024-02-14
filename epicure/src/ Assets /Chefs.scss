@@ -1,0 +1,38 @@
+.chefs-filter-buttons {
+    display: flex;
+    gap: 3px;
+  }
+  
+.chefs-filter-buttons button {
+    color:black;
+    border: none; 
+    background-color: transparent; 
+    position: relative; 
+    
+  }
+  
+.chefs-filter-buttons button::after {
+    content: '';
+    position: absolute; 
+    bottom: -3px; 
+    left: 0; 
+    width: 100%; 
+    height: 2px; 
+    background-color: transparent; 
+  }
+  
+.chefs-filter-buttons button.active {
+    font-weight: bold; 
+  }
+  
+.chefs-filter-buttons button.active::after {
+    background-color: orange; 
+  }
+  
+.chefs-chef-image{
+    width: 370px;
+    height: auto;
+    position: relative;
+    margin-left: 12px;
+    padding-bottom: 20px;
+}

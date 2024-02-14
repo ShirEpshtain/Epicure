@@ -1,19 +1,19 @@
 import React from 'react';
-import { Restaurant } from '../interfaces/Restaurant';
-import { Dish } from '../interfaces/Dish';
-import { Chef } from '../interfaces/Chef';
-import RestaurantCarousel from './RestaurantCarousel';
-import DishComponent from './Dish';
-import Icons from './Icons';
-import ChefComponent from './Chef';
-import ChefRestaurants from './ChefRestaurants';
+import { Restaurant } from '../../interfaces/Restaurant';
+import { HomePageDish } from '../../interfaces/HomePageDish';
+import { Chef } from '../../interfaces/Chef';
+import RestaurantCarousel from './HomePageRestaurantCarousel';
+import DishComponent from './HomePageDish';
+import Icons from './HomePageIcons';
+import ChefComponent from './HomePageChef';
 import HomepageSearchBox from './HomePageSearchBox';
 import HomePageFooter from './HomepageFooter';
+import { Link } from 'react-router-dom';
 
 interface Props {
   restaurantsData: {
     restaurants: Restaurant[];
-    dishes: Dish[];
+    dishes: HomePageDish[];
     chefs: Chef[];
   };
 }
@@ -31,9 +31,11 @@ const HomePage: React.FC<Props> = ({ restaurantsData }) => {
         <RestaurantCarousel restaurantsData={restaurantsData} />
       </div>
       <div style={{ position: "relative", left: "10px", fontWeight: "200"}}>
-        <button onClick={() => console.log('res')} style={{ border: 'none', background: 'none' }}>
+        <Link to='/our-restaurants'>
+        <button style={{ border: 'none', background: 'none' }}>
           <img src="../images/HomePage/ResBtn.jpg" alt="" />
         </button>
+        </Link>
       </div>
       <br />
       <div style={{ position: "relative", left: "10px", fontWeight: "200"}}>
@@ -41,9 +43,11 @@ const HomePage: React.FC<Props> = ({ restaurantsData }) => {
         <DishComponent dishesData={{ dishes }} />
       </div>
       <div style={{ position: "relative", left: "10px", fontWeight: "200"}}>
-        <button onClick={() => console.log('res')} style={{ border: 'none', background: 'none' }}>
+      <Link to='/our-restaurants'>
+        <button style={{ border: 'none', background: 'none' }}>
           <img src="../images/HomePage/ResBtn.jpg" alt="" />
         </button>
+        </Link>
       </div>
       <br />
       <Icons />
@@ -53,10 +57,10 @@ const HomePage: React.FC<Props> = ({ restaurantsData }) => {
         <ChefComponent chefsData={chefs} /> 
       </div> 
       <div style={{ position: "relative", left: "20px", fontWeight: "200"}}>
-      <ChefRestaurants chefs={chefs} />
+      {/* <ChefRestaurants chefs={chefs} /> */}
       <div style={{ position: "relative", left: "10px", fontWeight: "200"}}>
         <button onClick={() => console.log('res')} style={{ border: 'none', background: 'none' }}>
-          <img src="../images/HomePage/ResBtn.jpg" alt="" />
+          {/* <img src="../images/HomePage/ResBtn.jpg" alt="" /> */}
         </button>
       </div> <br/>
       </div>

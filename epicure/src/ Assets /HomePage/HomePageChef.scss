@@ -1,0 +1,66 @@
+.chef-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .chef-image {
+    width: 350px;
+    height: 310px;
+    position: relative;
+    left: 10px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .chef-description {
+    position: relative;
+    align-items: center; 
+    left: 10px;
+    font-family: Helvetica Neue;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 28px;
+    letter-spacing: 1.25px;
+    text-align: justified;
+    margin-top: 10px;
+  }
+  
+  // chef carousel restuarants
+  .chef-restaurants-container {
+    background-color: #ffffff; /* Set the background color of the container to white */
+  }
+  
+  .chef-restaurant-card {
+    background-color: #F9F4EA;
+    width: 245px; 
+    height: 280px; 
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 16px;
+    gap: 10px;
+    margin-right: 20px; 
+    margin-bottom: 20px;
+  
+  .chef-restaurant-image {
+      width: 245px; 
+      height: 151.8px; 
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  
+    .chef-restaurant-name {
+      font-family: Helvetica Neue;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 2.67px;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+  }
+  

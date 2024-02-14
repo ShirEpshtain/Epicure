@@ -1,8 +1,9 @@
 import React from "react";
-import { Restaurant } from "../interfaces/Restaurant";
+import { Restaurant } from "../../interfaces/Restaurant";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "../ Assets /Restaurants/RestaurantCarousel.scss";
+import "../../ Assets /HomePage/HomePageRestaurantCarousel.scss";
+import { Link } from 'react-router-dom';
 
 interface Props {
   restaurantsData: {
@@ -10,7 +11,7 @@ interface Props {
   };
 }
 
-const RestaurantCarousel: React.FC<Props> = ({ restaurantsData }) => {
+const HomePageRestaurantCarousel: React.FC<Props> = ({ restaurantsData }) => {
   return (
     <div className="restaurant-carousel-container">
       <Carousel
@@ -25,14 +26,16 @@ const RestaurantCarousel: React.FC<Props> = ({ restaurantsData }) => {
       >
         {restaurantsData.restaurants.map((restaurant: Restaurant) => (
           <div key={restaurant.id} >
-            <div className="restaurant-card">
+            <div className="Carousel-restaurant-card">
               <img
                 src={restaurant.image}
                 alt={restaurant.name}
-                className="restaurant-image"
+                className="Carousel-restaurant-image"
               />
-              <h2 className="restaurant-name">{restaurant.name}</h2>
-              <p className="chef-name">{restaurant.chef}</p>
+              <Link to={`/restaurant/${restaurant.id}`} key={restaurant.id}>
+                 <h2 className="Carousel-restaurant-name">{restaurant.name}</h2>
+              </Link>
+              <p className="Carousel-chef-name">{restaurant.chef}</p>
             </div>
           </div>
         ))}
@@ -41,4 +44,4 @@ const RestaurantCarousel: React.FC<Props> = ({ restaurantsData }) => {
   );
 };
 
-export default RestaurantCarousel;
+export default HomePageRestaurantCarousel;

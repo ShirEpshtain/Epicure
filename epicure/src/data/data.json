@@ -15,11 +15,41 @@
         { "day": 6, "open": "10:00", "close": "18:00" }
       ],
       "openingDay": "2024-02-05",
-      "dishes": {
-        "breakfast": [],
-        "launch": [],
-        "dinner": []
-      },
+      "dishes" : {
+        "breakfast" :[
+          { 
+            "id": 1,
+            "name": "Pad Ki Mao",
+            "ingredients": "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+            "image": "/images/RestaurantsDishes/claro/claro_PadKiMao.png",
+            "price": 88,
+            "sides": ["White bread", "Sticky rice"],
+            "changes":["Whitout peanuts", "Sticky Less spicy"]
+          }
+        ],
+        "lunch" :[
+          {
+            "id": 1,
+            "name": "Ta Ma La Ko",
+            "ingredients": "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+            "image": "/images/RestaurantsDishes/claro/claro_TaMaLaKo.png",
+            "price": 65,
+            "sides": ["White bread", "Sticky rice"],
+            "changes":["Whitout peanuts", "Sticky Less spicy"]
+          }
+        ],
+        "dinner" :[
+          {
+            "id": 1,
+            "name": "Red Farm",
+            "ingredients": "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+            "image": "/images/RestaurantsDishes/claro/claro_RedFarm.png",
+            "price": 65,
+            "sides": ["White bread", "Sticky rice"],
+            "changes":["Whitout peanuts", "Sticky Less spicy"]
+          }
+        ]
+    },
       "rating": 3,
       "address": "Ha'arbaa st 23, Tel Aviv-Yafo"
     },
@@ -39,10 +69,40 @@
         ],
       "openingDay" : "2023-12-05",
       "dishes" : {
-          "breakfast" :[],
-          "launch" :[],
-          "dinner" :[]
-      },
+        "breakfast" :[
+          {
+            "id": 1,
+            "name": "Pad Ki Mao",
+            "ingredients": "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+            "image": "/images/RestaurantsDishes/claro/claro_PadKiMao.png",
+            "price": 88,
+            "sides": ["White bread", "Sticky rice"],
+            "changes":["Whitout peanuts", "Sticky Less spicy"]
+          }
+        ],
+        "lunch" :[
+          {
+            "id": 1,
+            "name": "Ta Ma La Ko",
+            "ingredients": "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+            "image": "/images/RestaurantsDishes/claro/claro_TaMaLaKo.png",
+            "price": 65,
+            "sides": ["White bread", "Sticky rice"],
+            "changes":["Whitout peanuts", "Sticky Less spicy"]
+          }
+        ],
+        "dinner" :[
+          {
+            "id": 1,
+            "name": "Red Farm",
+            "ingredients": "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+            "image": "/images/RestaurantsDishes/claro/claro_RedFarm.png",
+            "price": 65,
+            "sides": ["White bread", "Sticky rice"],
+            "changes":["Whitout peanuts", "Sticky Less spicy"]
+          }
+        ]
+    },
       "rating" : 5,
       "address": "Ha'Arbaa St 17, Tel Aviv-Yafo"
   },
@@ -62,10 +122,40 @@
         ],
       "openingDay" : "2024-01-05",
       "dishes" : {
-          "breakfast" :[],
-          "launch" :[],
-          "dinner" :[]
-      },
+        "breakfast" :[
+          {
+            "id": 1,
+            "name": "Pad Ki Mao",
+            "ingredients": "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+            "image": "/images/RestaurantsDishes/claro/claro_PadKiMao.png",
+            "price": 88,
+            "sides": ["White bread", "Sticky rice"],
+            "changes":["Whitout peanuts", "Sticky Less spicy"]
+          }
+        ],
+        "lunch" :[
+          {
+            "id": 1,
+            "name": "Ta Ma La Ko",
+            "ingredients": "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+            "image": "/images/RestaurantsDishes/claro/claro_TaMaLaKo.png",
+            "price": 65,
+            "sides": ["White bread", "Sticky rice"],
+            "changes":["Whitout peanuts", "Sticky Less spicy"]
+          }
+        ],
+        "dinner" :[
+          {
+            "id": 1,
+            "name": "Red Farm",
+            "ingredients": "Green Papaya, Mango, Chukka Chili, Mint, Kaffir lime, Cashew, Akaya Cham sauce",
+            "image": "/images/RestaurantsDishes/claro/claro_RedFarm.png",
+            "price": 65,
+            "sides": ["White bread", "Sticky rice"],
+            "changes":["Whitout peanuts", "Sticky Less spicy"]
+          }
+        ]
+    },
       "rating" : 4,
       "address": "Medinat ha-Yehudim St 89, Herzliya"
   },
@@ -86,7 +176,7 @@
       "openingDay" : "2022-01-05",
       "dishes" : {
           "breakfast" :[],
-          "launch" :[],
+          "lunch" :[],
           "dinner" :[]
       },
       "rating" : 5,
@@ -109,13 +199,12 @@
       "openingDay" : "2023-07-02",
       "dishes" : {
           "breakfast" :[],
-          "launch" :[],
+          "lunch" :[],
           "dinner" :[]
       },
       "rating" : 1,
       "address": "Derech Menachem Begin 121, Tel Aviv-Yafo"
   },
-
   {
       "id" : 6,
       "name": "HaMiznon",
@@ -133,7 +222,7 @@
       "openingDay" : "2024-01-01",
       "dishes" : {
           "breakfast" :[],
-          "launch" :[],
+          "lunch" :[],
           "dinner" :[]
       },
       "rating" : 4,
@@ -144,14 +233,14 @@
     {
       "id": 1,
       "name": "Pad Ki Mao",
-      "image": "../images/Dishes/padKiMao.jpeg",
+      "image": "../images/HomePage/Dishes/padKiMao.jpeg",
       "ingredients": "Shrimps, Glass <br> Noodles, Kemiri Nuts, <br> Shallots, <br> Lemon Grass, Magic <br> Chili Brown Coconut",
       "price": 88,
       "icons": ["spicy"]
     }, {
       "id" : 2,
       "name" : "Garbanzo Frito",
-      "image" : "../images/Dishes/garbanzoFrito.jpeg",
+      "image" : "../images/HomePage/Dishes/garbanzoFrito.jpeg",
       "ingredients" : "Polenta fingers, <br> veal cheek, magic <br> chili cured lemon cream, yellow laksa",
       "price" : 98,
       "icons" : ["spicy"]
@@ -159,7 +248,7 @@
   {
       "id" : 3,
       "name" : "Smoked Pizza",
-      "image" : "../images/Dishes/smokedPizza.jpeg",
+      "image" : "../images/HomePage/Dishes/smokedPizza.jpeg",
       "ingredients" : "Basil dough, <br> cashew 'butter', demi- <br> glace, bison & radish",
       "price" : 65,
       "icons" : ["vegan"]
@@ -172,8 +261,34 @@
       "private": "YOSSI",
       "image": "../images/Chefs/YossiS.png",
       "description": "Chef Yossi Shitrit has been living and <br> breathing his culinary dreams for more <br> than two decades, including running <br> the kitchen in his first restaurant, the <br> fondly-remembered Violet, located in <br> Moshav Udim. Shitrit's creativity and <br> culinary acumen born of long <br> experience are expressed in the every <br> detail of each and every dish.",
+      "experience": 2,
+      "rating": 8,
       "restaurants": [
-        {"name":"Onza", "image":"../images/chefs/YossiS/onza.jpeg"}, {"name":"Mashya", "image":"../images/chefs/YossiS/mashya.jpeg"}, {"name":"HIBA" , "image":"../images/chefs/YossiS/hiba.jpeg"}
+        {"name":"Onza", "image":"../images/chefs/YossiShitritRestaurants/onza.jpeg"}, {"name":"Mashya", "image":"../images/chefs/YossiShitritRestaurants/mashya.jpeg"}, {"name":"HIBA" , "image":"../images/chefs/YossiShitritRestaurants/hiba.jpeg"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ASAF GRANIT",
+      "private": "ASAF",
+      "image": "../images/Chefs/AsafG.jpeg",
+      "description": "Granit was born in the Rasko neighborhood of Jerusalem. Granit initially served in his military service as a fighter in the paratrooper brigade. Following an injury during training, he was retrained to serve as a medic instructor.",
+      "experience": 4,
+      "rating": 10,
+      "restaurants": [
+        {"name":"Machneyuda", "image":"../images/chefs/AsafGranitRestaurants/Machneyuda.jpeg"}, {"name":"Shabour", "image":"../images/chefs/AsafGranitRestaurants/shabour.jpeg"}, {"name":"Lotte" , "image":"../images/chefs/AsafGranitRestaurants/lotte.jpeg"}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "AVIV MOSHE",
+      "private": "AVIV",
+      "image": "../images/Chefs/AvivM.png",
+      "description": "With over 15 years of experience chef Aviv always works with fresh & seasonal ingredients combining classic dishes with a modern twist.",
+      "experience": 1,
+      "rating": 7,
+      "restaurants": [
+        {"name":"Messa", "image":"../images/chefs/AvivMosheRestaurants/messa.jpeg"}, {"name":"Happicerie", "image":"../images/chefs/AvivMosheRestaurants/happicerie.jpeg"}
       ]
     }
   ]

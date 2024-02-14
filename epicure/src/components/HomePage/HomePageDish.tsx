@@ -1,16 +1,16 @@
 import React from "react";
-import { Dish } from "../interfaces/Dish";
+import { HomePageDish } from "../../interfaces/HomePageDish";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "../ Assets /Dishes/Dish.scss";
+import "../../ Assets /HomePage/HomePageDish.scss";
 
 interface Props {
   dishesData: {
-    dishes: Dish[];
+    dishes: HomePageDish[];
   };
 }
 
-const DishComponent: React.FC<Props> = ({ dishesData }) => {
+const HomePageDishComponent: React.FC<Props> = ({ dishesData }) => {
   return (
     <div className="dishes-carousel-container">
       <Carousel
@@ -23,13 +23,13 @@ const DishComponent: React.FC<Props> = ({ dishesData }) => {
         centerSlidePercentage={50}
         className="dishes-carousel"
       >
-        {dishesData.dishes.map((dish: Dish) => (
-          <div key={dish.id} className="dish-card">
-            <img src={dish.image} alt={dish.name} className="dish-image" />
-            <h2 className="dish-name">{dish.name}</h2>
+        {dishesData.dishes.map((dish: HomePageDish) => (
+          <div key={dish.id} className="Carousel-dish-card">
+            <img src={dish.image} alt={dish.name} className="Carousel-dish-image" />
+            <h2 className="Carousel-dish-name">{dish.name}</h2>
             {/* Rendering ingredients using dangerouslySetInnerHTML */}
             <div
-              className="dish-ingredients"
+              className="Carousel-dish-ingredients"
               dangerouslySetInnerHTML={{
                 __html: dish.ingredients.replace(/\n/g, "<br>"),
               }}
@@ -41,11 +41,11 @@ const DishComponent: React.FC<Props> = ({ dishesData }) => {
                   key={index}
                   src={`../images/Icons/${icon}.svg`}
                   alt={icon}
-                  className="dish-icon"
+                  className="Carousel-dish-icon"
                 />
               ))}
             </div> 
-            <h3 className="dish-price">₪{dish.price}</h3>
+            <h3 className="Carousel-dish-price">₪{dish.price}</h3>
             </div>
            
           </div>
@@ -55,4 +55,4 @@ const DishComponent: React.FC<Props> = ({ dishesData }) => {
   );
 };
 
-export default DishComponent;
+export default HomePageDishComponent;

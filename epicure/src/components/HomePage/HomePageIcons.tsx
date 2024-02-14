@@ -1,7 +1,7 @@
 import React from "react";
-import "../ Assets /Icons/Icons.scss";
+import "../../ Assets /Icons/Icons.scss";
 
-const Icons: React.FC = () => {
+const HomePageIcons: React.FC = () => {
     const path = "../images/Icons/"
     return (
         <div className="icons-contanier">
@@ -25,4 +25,4 @@ const Icons: React.FC = () => {
     )
 }
 
-export default Icons
+export default HomePageIcons

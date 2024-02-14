@@ -1,5 +1,5 @@
 import React from 'react';
-import '../ Assets /HomePageSearchBox.scss';
+import '../../ Assets /HomePage/HomePageSearchBox.scss';
 
 const HomepageSearchBox: React.FC = () => {
     return (

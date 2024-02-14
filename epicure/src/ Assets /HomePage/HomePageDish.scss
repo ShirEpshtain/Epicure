@@ -1,4 +1,4 @@
-.dish-card {
+.Carousel-dish-card {
   background-color: #f9f4ea;
   width: 245px;
   height: 388px;
@@ -12,14 +12,14 @@
   margin-bottom: 20px;
   position: relative; /* Added to make .dish-footer position absolute relative to .dish-card */
 
-  .dish-image {
+  .Carousel-dish-image {
     width: 245px;
     height: 151.8px;
     margin-bottom: 10px;
     text-align: center;
   }
 
-  .dish-name {
+  .Carousel-dish-name {
     font-family: Helvetica Neue;
     font-size: 18px;
     font-weight: 400;
@@ -29,7 +29,7 @@
     margin-bottom: 5px;
   }
 
-  .dish-ingredients {
+  .Carousel-dish-ingredients {
     font-family: Helvetica Neue;
     font-size: 12px;
     line-height: 20px;
@@ -43,7 +43,7 @@
     gap: 5px;
   }
 
-  .dish-icon {
+  .Carousel-dish-icon {
     width: 30px;
     height: 24px;
   }
@@ -55,7 +55,7 @@
     left: 16px; 
   }
 
-  .dish-price {
+  .Carousel-dish-price {
     font-family: Helvetica Neue;
     font-size: 14px;
     font-weight: 400;

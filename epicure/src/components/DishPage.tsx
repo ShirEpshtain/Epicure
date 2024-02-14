@@ -1,0 +1,140 @@
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Restaurant } from "../interfaces/Restaurant";
+import "../ Assets /DishPage.scss";
+import { Dish } from "../interfaces/RestuarantDish";
+
+interface Props {
+  restaurantsData: { restaurants: Restaurant[] };
+}
+
+const DishPage: React.FC<Props> = ({ restaurantsData }) => {
+
+  const { restaurantId, mealType, dishId } = useParams<{
+    restaurantId: string;
+    mealType: string;
+    dishId: string;
+  }>();
+
+  const [quantity, setQuantity] = useState<number>(1);
+  const [selectedSide, setSelectedSide] = useState<string>("");
+  const [selectedChanges, setSelectedChanges] = useState<string[]>([]);
+
+  // Find the selected restaurant
+  const selectedRestaurant = restaurantsData.restaurants.find(
+    (restaurant) => restaurant.id.toString() === restaurantId
+  );
+
+  if (!selectedRestaurant) {
+    return <div>Restaurant not found</div>;
+  }
+
+  // Find the selected dish based on the meal type and dish ID
+  const selectedDishes =
+    selectedRestaurant.dishes[
+      mealType as keyof typeof selectedRestaurant.dishes
+    ];
+  const selectedDish = selectedDishes
+    ? selectedDishes.find((dish) => dish.id.toString() === dishId)
+    : undefined;
+
+  if (!selectedDish) {
+    return <div>Dish not found</div>;
+  }
+
+  // Function to handle adding the dish to the bag with selected preferences
+// Function to handle adding the dish to the bag with selected preferences
+const addToBag = () => {
+ console.log(selectedDish.name)
+};
+
+
+  // Render the selected dish
+  return (
+    <div>
+      <img
+        className="dishPage-image"
+        src={`${process.env.PUBLIC_URL}${selectedDish.image}`}
+        alt={selectedDish.name}
+      />
+      <h3 className="dish-name">{selectedDish.name}</h3>
+      <p>{selectedDish.ingredients}</p>
+      <h3>₪{selectedDish.price}</h3>
+
+      <div>
+        <p className="label-line">Choose a side</p>
+        <div className="side-options">
+          {selectedDish.sides.map((side, index) => (
+            <div className="side-option" key={index}>
+              <input
+                type="radio"
+                id={`side${index}`}
+                name="side"
+                value={side}
+                onChange={() => setSelectedSide(side)}
+              />
+              <label htmlFor={`side${index}`}>{side}</label>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <p className="label-line">Changes:</p>
+        <div className="change-options">
+          {selectedDish.changes.map((change, index) => (
+            <div className="change-option" key={index}>
+              <input
+                type="checkbox"
+                id={`change${index}`}
+                name="change"
+                value={change}
+                onChange={(e) => {
+                  const selectedChange = e.target.value;
+                  if (selectedChanges.includes(selectedChange)) {
+                    setSelectedChanges((prev) =>
+                      prev.filter((change) => change !== selectedChange)
+                    );
+                  } else {
+                    setSelectedChanges((prev) => [...prev, selectedChange]);
+                  }
+                }}
+              />
+              <label htmlFor={`change${index}`}>
+                <span className="checkbox"></span>
+                {change}
+              </label>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <p className="label-line">Quantity:</p> <br />
+        <div className="signs">
+          <button onClick={() => setQuantity((prev) => Math.max(prev - 1, 1))}>
+            -
+          </button>
+          <h1>{quantity}</h1>
+          <button
+            style={{ fontSize: "30px" }}
+            onClick={() => setQuantity((prev) => prev + 1)}
+          >
+            +
+          </button>
+        </div>
+      </div>
+      <br />
+
+      <button className="add-to-bag-btn" onClick={addToBag}>
+        ADD TO BAG
+      </button>
+      <br />
+      <br />
+      <br />
+      <hr style={{ border: "1px solid rgba(0, 0, 0, 0.05)" }} />
+    </div>
+  );
+};
+
+export default DishPage;

@@ -1,0 +1,72 @@
+.restaurant-image {
+  width: 400px;
+  height: auto;
+  display: block;
+}
+
+.restaurant-dish-card {
+  flex: 1;
+  margin: 10px;
+  width: 335px;
+  height: auto;
+  padding: 10px;
+  background-color: #f9f4ea;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.restaurant-dish-card img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.restaurant-dish-card > div {
+  padding: 10px;
+}
+
+.price-line {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  flex-grow: 1; /* Grow to fill remaining space */
+  height: 1px;
+  background-color: #ccc;
+  margin-left: 10px; /* Add spacing between price and line */
+}
+
+.meals-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.meals-buttons button {
+  color: black;
+  border: none;
+  background-color: transparent;
+  position: relative;
+}
+
+.meals-buttons button::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+}
+
+.meals-buttons button.active {
+  font-weight: bold;
+}
+
+.meals-buttons button.active::after {
+  background-color: orange;
+}

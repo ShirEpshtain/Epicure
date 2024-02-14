@@ -2,13 +2,13 @@ import React from 'react';
 import { Chef } from '../interfaces/Chef';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import '../ Assets /ChefRestaurants.scss';
+import '../../ Assets /HomePage/HomePageChefRestaurants.scss';
 
 interface Props {
   chefs: Chef[];
 }
 
-const ChefRestaurants: React.FC<Props> = ({ chefs }) => {
+const HomePageChefRestaurants: React.FC<Props> = ({ chefs }) => {
   return (
     <div className="restaurant-carousel-container">
       {chefs.map((chef) => (
@@ -21,16 +21,16 @@ const ChefRestaurants: React.FC<Props> = ({ chefs }) => {
             infiniteLoop={true}
             centerMode={true}
             centerSlidePercentage={50}
-            className="restaurant-carousel"
+            className="chef-restaurant-carousel"
           >
             {chef.restaurants.map((restaurant, index) => (
-              <div key={index} className="restaurant-card">
+              <div key={index} className="chef-restaurant-card">
                 <img
                   src={restaurant.image}
                   alt={restaurant.name}
-                  className="restaurant-image"
+                  className="chef-restaurant-image"
                 />
-                <h3 className="restaurant-name">{restaurant.name}</h3>
+                <h3 className="chef-restaurant-name">{restaurant.name}</h3>
               </div>
             ))}
           </Carousel>
@@ -40,4 +40,4 @@ const ChefRestaurants: React.FC<Props> = ({ chefs }) => {
   );
 };
 
-export default ChefRestaurants;
+export default HomePageChefRestaurants;
