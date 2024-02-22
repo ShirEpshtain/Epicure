@@ -6,7 +6,8 @@ export interface Dish {
   price: number;
   sides: string[];
   changes: string[];
-  quantity?: number; // Add quantity property
-  selectedSide?: string; // Add selectedSide property
-  selectedChanges?: string[]; // Add selectedChanges property
+  quantity?: number; 
+  selectedSide?: string; 
+  selectedChanges?: string[]; 
+  icon: string[];
 }

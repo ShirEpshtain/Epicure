@@ -1,5 +1,6 @@
 .icons-contanier{
     background-color: #FAFAFA;
+    text-align: center;
 }
 
 .sentcence{
@@ -10,4 +11,32 @@
     font-weight: 200;
     line-height: 35px;
     letter-spacing: 1.25px;
+    margin-top: -4px;
+}
+
+@media only screen and (min-width: 768px) {
+    .sentcence{
+        text-align: center;
+        display: block;
+        font-family: Helvetica Neue;
+        font-size: 30px;
+        font-weight: 200;
+        line-height: 35px;
+        letter-spacing: 1.25px;
+        margin-top: -4px;
+    }
+
+    .icons-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 80px;
+      }
+
+    .icon-item{
+        text-align: center;
+        padding-right: 80px;
+        white-space: nowrap;
+    }
+
 }

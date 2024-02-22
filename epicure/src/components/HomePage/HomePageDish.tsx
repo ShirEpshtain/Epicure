@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { HomePageDish } from "../../interfaces/HomePageDish";
-import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../ Assets /HomePage/HomePageDish.scss";
 
@@ -11,46 +10,79 @@ interface Props {
 }
 
 const HomePageDishComponent: React.FC<Props> = ({ dishesData }) => {
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 1024);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className="dishes-carousel-container">
-      <Carousel
-        showThumbs={false}
-        showArrows={true}
-        swipeable={true}
-        emulateTouch={true}
-        infiniteLoop={true}
-        centerMode={true}
-        centerSlidePercentage={50}
-        className="dishes-carousel"
-      >
-        {dishesData.dishes.map((dish: HomePageDish) => (
-          <div key={dish.id} className="Carousel-dish-card">
-            <img src={dish.image} alt={dish.name} className="Carousel-dish-image" />
-            <h2 className="Carousel-dish-name">{dish.name}</h2>
-            {/* Rendering ingredients using dangerouslySetInnerHTML */}
-            <div
-              className="Carousel-dish-ingredients"
-              dangerouslySetInnerHTML={{
-                __html: dish.ingredients.replace(/\n/g, "<br>"),
-              }}
-            /> <br/>
-            <div className="dish-footer">
-            <div className="icon-container">
-              {dish.icons.map((icon: string, index: number) => (
-                <img
-                  key={index}
-                  src={`../images/Icons/${icon}.svg`}
-                  alt={icon}
-                  className="Carousel-dish-icon"
-                />
-              ))}
-            </div> 
-            <h3 className="Carousel-dish-price">₪{dish.price}</h3>
+    <div className="headline-dish-hub-div">
+      <div className="dish-hub-div">
+        <div className="dish-carousel-container">
+          {dishesData.dishes.map((dish: HomePageDish) => (
+            <div key={dish.id} className="custom-dish-carousel-item">
+              <img
+                src={dish.image}
+                alt={dish.name}
+                className="Carousel-dish-image"
+              />
+              <h2 className="Carousel-dish-name">{dish.name}</h2>
+              {isDesktop ? (
+                <>
+                  <div className="dish-icon-container">
+                    {dish.icons.map((icon: string, index: number) => (
+                      <img
+                        key={index}
+                        src={`../images/Icons/${icon}.svg`}
+                        alt={icon}
+                        className="Carousel-dish-icon"
+                      />
+                    ))}
+                  </div>
+                  {/* <div className="Carousel-dish-ingredients">{dish.ingredients}</div> */}
+                  <div
+                    className="Carousel-dish-ingredients"
+                    dangerouslySetInnerHTML={{
+                      __html: dish.ingredients.replace("", "<br>"),
+                    }}
+                  />
+                </>
+              ) : (
+                <>
+                  <div
+                    className="Carousel-dish-ingredients"
+                    dangerouslySetInnerHTML={{
+                      __html: dish.ingredients.replace(/\n/g, "<br>"),
+                    }}
+                  />
+                  <div className="dish-icon-container">
+                    {dish.icons.map((icon: string, index: number) => (
+                      <img
+                        key={index}
+                        src={`../images/Icons/${icon}.svg`}
+                        alt={icon}
+                        className="Carousel-dish-icon"
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+              <div className="Price-container">
+                <hr className="Price-divider" />
+                <p className="Carousel-dish-price">₪{dish.price}</p>
+              </div>
             </div>
-           
-          </div>
-        ))}
-      </Carousel>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

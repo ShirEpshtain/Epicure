@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Chef } from '../../interfaces/Chef';
 import '../../ Assets /HomePage/HomePageChef.scss';
-import { Carousel } from 'react-responsive-carousel';
 
 interface Props {
   chefsData: Chef[];
@@ -35,44 +34,38 @@ const HomePageChefComponent: React.FC<Props> = ({ chefsData }) => {
   }
 
   return (
-    <div>
+    <div >
       <div key={currentChef.id}>
-        <img className="chef-image" src={currentChef.image} alt={currentChef.name} style={{ alignItems: 'center' }} />
+        <div className='chef-data'>
+        <img className="chef-image" src={currentChef.image} alt={currentChef.name}/>
         <div
           className="chef-description"
           dangerouslySetInnerHTML={{
             __html: currentChef.description.replace(/\n/g, '<br>'),
           }}
         />
+        </div>
+        {/* <p className='chef-description'>{currentChef.description}</p> */}
         <br />
-        <p style={{ position: 'relative', left: '10px', fontWeight: 200 }}>
+        <p className='chef-rests-label'>
           {currentChef.private}'S RESTAURANTS:
         </p>
       </div>
-      <div className="restaurant-carousel-container">
-        <div className="chef-restaurants-container" style={{ width: '100%' }}>
-          <Carousel
-            showThumbs={false}
-            showArrows={true}
-            swipeable={true}
-            emulateTouch={true}
-            infiniteLoop={true}
-            centerMode={true}
-            centerSlidePercentage={50}
-            className="chef-restaurant-carousel"
-          >
+      <div className='headline-chef-hub-div'>
+      <div className="homepage-chef-hub-div ">
+      <div className="custom-homepage-chef-container">
             {currentChef.restaurants.map((restaurant, index) => (
-              <div key={index} className="chef-restaurant-card">
+              <div key={index} className="custom-chef-res-item">
                 <img
                   src={restaurant.image}
                   alt={restaurant.name}
-                  className="chef-restaurant-image"
+                  className="Carousel-chef-res-image"
                 />
-                <h3 className="chef-restaurant-name">{restaurant.name}</h3>
+                <p className="Carousel-chef-res-name">{restaurant.name}</p>
               </div>
             ))}
-          </Carousel>
         </div>
+      </div>
       </div>
     </div>
   );

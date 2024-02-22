@@ -1,0 +1,42 @@
+@media only screen and (min-width: 768px) {
+  .HP-footer-container {
+    width: 1440px;
+    height: 560px;
+    display: flex;
+    flex-direction: row;
+
+//    .desk-container{
+//         display: flex;
+
+//     }
+
+  .HP-footer-about-label {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 30px;
+    font-weight: 200;
+    line-height: 35px;
+    letter-spacing: 2.14px;
+    margin-left: 200px;
+  }
+
+  .HP-footer-data1-desktop{
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 30px;
+    letter-spacing: 2.14px;
+    margin-left: 200px;
+    width: 470px;
+  }
+
+  .HP-footer-Frameimg{
+    margin-left: 200px;
+  }
+
+  .HP-footer-Aboutimg {
+    width: 180px;
+    height: 165px;
+    margin-left: 350px;
+    margin-top: 150px;
+  }
+}}

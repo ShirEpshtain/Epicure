@@ -1,0 +1,44 @@
+.homepageLabels {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 24px;
+    letter-spacing: 1.25px;
+    text-align: left;
+    margin-left: 10px;
+  }
+
+.main{
+    overflow-x: hidden;
+}
+
+  .second-main{
+    margin-left: 10px;
+  }
+
+.all-res-btn {
+  border: none;
+  background: none;
+  margin-left: 10px;
+}
+
+
+@media (min-width: 800px) {
+  .homepageLabels {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 30px;
+    font-weight: 200;
+    line-height: 24px;
+    letter-spacing: 1.25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .all-res-btn {
+    border: none;
+    background: none;
+    margin-left: 950px;
+  }
+}
+  

@@ -1,59 +1,113 @@
-.chef-container {
+.chef-image {
+  width: 390px;
+  position: relative;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.chef-description {
+  position: relative;
+  align-items: center; 
+  width: 100%;
+  font-family: Helvetica Neue;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 28px;
+  letter-spacing: 1.25px;
+  text-align: justified;
+  margin-top: 10px;
+}
+
+.chef-rests-label {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 24px;
+  letter-spacing: 1.25px;
+  text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  .chef-data{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .chef-image {
-    width: 350px;
-    height: 310px;
-    position: relative;
-    left: 10px;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-  }
-  
-  .chef-description {
-    position: relative;
-    align-items: center; 
-    left: 10px;
-    font-family: Helvetica Neue;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 28px;
-    letter-spacing: 1.25px;
-    text-align: justified;
-    margin-top: 10px;
-  }
-  
-  // chef carousel restuarants
-  .chef-restaurants-container {
-    background-color: #ffffff; /* Set the background color of the container to white */
-  }
-  
-  .chef-restaurant-card {
-    background-color: #F9F4EA;
-    width: 245px; 
-    height: 280px; 
-    flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
-    border-radius: 10px;
-    padding: 16px;
-    gap: 10px;
-    margin-right: 20px; 
-    margin-bottom: 20px;
+    flex-direction: row;
+
+    .chef-image {
+      width: 450px;
+      height: 370px;
+      margin-left: 200px;
+    }
+
+    .chef-description {
+      font-family: Helvetica Neue;
+      font-size: 24px;
+      font-weight: 200;
+      line-height: 35px;
+      letter-spacing: 1.25px;
+      text-align: justified;
+      margin-top: 30px;
+      margin-left: 50px;
+    }
+}
+
+  .chef-rests-label{
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 30px;
+    font-weight: 200;
+    line-height: 35px;
+    letter-spacing: 1.25px;
+    text-align: left;
+    margin-left: 200px;
+  }
+}
   
-  .chef-restaurant-image {
-      width: 245px; 
-      height: 151.8px; 
-      margin-bottom: 10px;
+// second part - chef restaurants
+.headline-chef-hub-div {
+  margin-top: 20px;
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 24px;
+  letter-spacing: 1.25px;
+  text-align: left;
+  margin-left: 0px;
+
+  .homepage-chef-hub-div {
+    margin-top: 0;
+    text-align: left;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .custom-homepage-chef-container {
+    display: flex;
+    overflow-y: hidden;
+
+    .custom-chef-res-item {
+      flex: 0 0 200px;
+      margin-right: 30px;
+      background-color: #F9F4EA;
+      width: 245px;
+      height: 220px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 10px;
+      margin-left: 10px;
+    }
+
+    .Carousel-chef-res-image {
+      width: 245px;
+      height: 151.8px;
       text-align: center;
     }
-  
-    .chef-restaurant-name {
+
+    .Carousel-chef-res-name {
       font-family: Helvetica Neue;
       font-size: 18px;
       font-weight: 400;
@@ -61,6 +115,45 @@
       letter-spacing: 2.67px;
       text-align: left;
       margin-bottom: 5px;
+      margin-left: 10px;
     }
   }
-  
+
+  @media only screen and (min-width: 768px) {
+
+    .custom-homepage-chef-container{
+      display: flex;
+      overflow-y: hidden;
+      margin-left: 200px;
+      
+    .custom-chef-res-item {
+      background-color: #F9F4EA;
+      width: 230px;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .Carousel-chef-res-image {
+      width: 230px;
+      height: 220px;
+    }
+
+    .Carousel-chef-res-name {
+      font-family: Helvetica Neue;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 47px;
+      letter-spacing: 2.67px;
+      margin-top: 5px;
+    }
+
+    .custom-chef-res-item:nth-child(-n+3) {
+      display: flex;
+    }
+  }
+ }}
+
+

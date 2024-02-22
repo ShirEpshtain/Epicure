@@ -38,7 +38,7 @@ const Chefs: React.FC<Props> = ({ chefsData }) => {
 
   return (
     <div className="chefs-container"> 
-      <h1>Chefs</h1> 
+      <p className='chefs-chefs-label'>CHEFS</p> 
       <div className="chefs-filter-buttons">
         <button onClick={() => setFilter('all')} className={filter === 'all' ? 'active' : ''}>All</button>
         <button onClick={() => setFilter('new')} className={filter === 'new' ? 'active' : ''}>New</button>

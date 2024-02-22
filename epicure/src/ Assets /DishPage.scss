@@ -1,113 +1,222 @@
 .dishPage-image {
-    width: 100%;
-  }
-  
-  .label-line {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 10px;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 20px;
-    font-weight: 200;
-    line-height: 18px;
-    letter-spacing: 1.97px;
-    text-align: center;
-  }
-  
-  .label-line::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px; /* Adjust as needed for the thickness of the line */
-    width: 100%;
-    height: 1px; /* Adjust as needed for the thickness of the line */
-    background-color: orange; /* Set color to orange */
-  }
-  
-  .side-options {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .side-option {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 18px;
-    letter-spacing: 1.97px;
-    text-align: center;
-  }
-  
-  .change-option {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 18px;
-    letter-spacing: 1.97px;
-    text-align: center;
-  }
-  
-  .side-option input[type="radio"] + label,
-  .change-option input[type="checkbox"] + label {
-    margin-left: 10px; /* Adjust spacing between radio button/checkbox and label */
-    cursor: pointer;
-  }
-  
-  .side-option input[type="radio"] + label .circle {
-    display: inline-block;
-    width: 20px; /* Size of the circle */
-    height: 20px; /* Size of the circle */
-    border: 2px solid orange; /* Border color */
-    border-radius: 50%; /* Make it a circle */
-    margin-right: 10px; /* Adjust spacing */
-  }
-  
-  .add-to-bag-btn {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 2.67px;
-    text-align: center;
-    padding: 15px 30px; /* Adjust padding as needed */
-    background-color: black;
-    color: white;
+  width: 100%;
+}
+
+.dish-page-dish-name {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 2.67px;
+  text-align: left;
+  margin-left: 15px;
+}
+
+.dish-page-dish-ingredients {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 18px;
+  letter-spacing: 1.97px;
+  text-align: left;
+  margin-left: 15px;
+}
+
+.label-line {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 18px;
+  letter-spacing: 1.97px;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.label-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; 
+  width: 100%;
+  height: 1px; 
+  background-color: orange; 
+}
+
+.side-option,
+.change-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 1.97px;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.side-option input[type="radio"] + label,
+.change-option input[type="checkbox"] + label {
+  margin-left: 10px;
+  cursor: pointer;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 36px;
+  letter-spacing: 1.97px;
+  text-align: center;
+  color: black;
+}
+
+
+.add-to-bag-btn {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 2.67px;
+  text-align: center;
+  padding: 15px 30px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 15px;
+}
+
+.add-to-bag-btn:hover {
+  background-color: darkorange;
+}
+
+.signs {
+  display: inline-flex;
+  align-items: center;
+
+  button {
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
-  }
-  
-  .add-to-bag-btn:hover {
-    background-color: darkorange; /* Darker color on hover */
-  }
-  
-  .signs {
-    display: inline-flex;
-    align-items: center;
-  
-    button {
-      border: none;
-      background: none;
-      color: black;
-      font-size: 60px;
-  
-      &:first-child {
-        margin-right: 10px;
-      }
-  
-      &:last-child {
-        margin-left: 10px;
-      }
+    background: none;
+    color: black;
+    font-size: 60px;
+
+    &:first-child {
+      margin-right: 10px;
     }
-  
-    h1 {
-      margin: 0 10px;
+
+    &:last-child {
+      margin-left: 10px;
     }
   }
+
+  h1 {
+    margin: 0 10px;
+  }
+}
+
+@media only screen and (min-width: 768px){
+
+.dish-page-main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50px;
+  margin-left: 400px;
+}
+
+/* Add this CSS to your existing DishPage.scss file */
+.dish-popup-container {
+  position: relative;
+  max-width: 450px;
+  height: 1100px;
+  top: 20px;
+  padding: 0;
+  gap: 40px;
+  background-color: white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000; 
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.dish-popup-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  color: white;
+  margin-bottom: 1080px;
+  z-index: 1100;
+  position: absolute;
+  top: -25px;
+}
+
+.dishPage-image {
+  width: 450px;
+  height: 270px;
+}
+
+.dish-page-dish-name {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 2.67px;
+  text-align: center;
+}
+
+.dish-page-dish-ingredients {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 18px;
+  letter-spacing: 1.97px;
+  text-align: center;
+  width: 230px;
+  margin-left: 120px;
+}
+
+.dish-page-dish-price{
+  margin-top: 20px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 1.03px;
+  text-align: center;
+}
+
+.dish-page-second-container{
+  margin-top: -30px;
+}
+
+.dish-page-all-changes,
+.dish-pages-all-sides{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  z-index: 999; 
+}
+
+
+.footer{
+  display: none;
+}
+
+}

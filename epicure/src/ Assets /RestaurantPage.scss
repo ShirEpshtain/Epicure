@@ -1,32 +1,91 @@
 .restaurant-image {
-  width: 400px;
+  width: 100%;
   height: auto;
   display: block;
 }
 
+.res-page-res-name {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 2.67px;
+  text-align: left;
+  margin-left: 15px;
+}
+
+.res-page-chef-name {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 20px;
+  letter-spacing: 1.97px;
+  text-align: left;
+  margin-left: 15px;
+}
+
+.res-page-clock {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 20px;
+  letter-spacing: 1.97px;
+  text-align: left;
+  margin-left: 15px;
+}
+
 .restaurant-dish-card {
   flex: 1;
-  margin: 10px;
-  width: 335px;
+  margin: 30px;
+  width: 380px;
   height: auto;
-  padding: 10px;
   background-color: #f9f4ea;
-  border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 15px;
 }
 
 .restaurant-dish-card img {
   width: 100%;
   height: auto;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  margin: 0;
 }
 
 .restaurant-dish-card > div {
   padding: 10px;
+}
+
+.res-page-crad-dish-name {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 2.67px;
+  text-align: left;
+}
+
+.res-page-crad-dish-name a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.res-page-crad-dish-ingredients {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 20px;
+  letter-spacing: 1.97px;
+  text-align: left;
+}
+
+.res-page-card-price {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 1.97px;
+  text-align: center;
 }
 
 .price-line {
@@ -35,10 +94,10 @@
 }
 
 .line {
-  flex-grow: 1; /* Grow to fill remaining space */
+  flex-grow: 1; 
   height: 1px;
   background-color: #ccc;
-  margin-left: 10px; /* Add spacing between price and line */
+  margin-left: 10px;
 }
 
 .meals-buttons {
@@ -51,6 +110,13 @@
   border: none;
   background-color: transparent;
   position: relative;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 22px;
+  letter-spacing: 1.92px;
+  text-align: left;
+  margin-left: 15px;
 }
 
 .meals-buttons button::after {
@@ -69,4 +135,135 @@
 
 .meals-buttons button.active::after {
   background-color: orange;
+}
+
+@media only screen and (min-width: 768px){
+  .res-page-general{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .restaurant-image {
+      width: 1186px;
+      height: 425px;
+      position: absolute;
+      top: 70px;
+      left: 127px;
+      object-fit: cover;
+  }
+  
+  .res-page-res-name {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 64px;
+    letter-spacing: 3.67px;
+    text-align: center;
+    margin-top: 450px; 
+  }
+
+  .res-page-chef-name {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 32px;
+    font-weight: 200;
+    line-height: 36px;
+    letter-spacing: 1.97px;
+    text-align: center;
+    margin-top: -40px;
+  }
+
+  .res-page-clock {
+   text-align: center;
+   margin-top: -10px;
+  }
+  }
+
+  .meals-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .meals-buttons button {
+    color: black;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 22px;
+    letter-spacing: 1.92px;
+    text-align: center;
+    margin-top: -10px;
+  }
+
+  .restaurant-dishes {
+    padding-left: 50px;
+    padding-right: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px; 
+  }
+
+  .restaurant-dish-card {
+    flex: 1;
+    margin: 30px;
+    width: 270px;
+    height: auto;
+    background-color: #f9f4ea;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25px;
+  }
+
+  .restaurant-dish-card img{
+    width: 270px;
+    height: 170px;
+  }
+
+  .res-page-crad-dish-name {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 2.67px;
+    text-align: center;
+    margin-top: 3px;
+  }
+
+  .res-page-crad-dish-name a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .res-page-crad-dish-ingredients {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 24px;
+    letter-spacing: 1.97px;
+    text-align: center;
+    height: 120px;
+  }
+
+  .price-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .res-page-card-price {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 1.97px;
+    text-align: center;
+  }
+
+
 }

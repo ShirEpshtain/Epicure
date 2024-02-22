@@ -1,17 +1,20 @@
 import React from 'react';
 import '../../ Assets /HomePage/HomePageSearchBox.scss';
 
-const HomepageSearchBox: React.FC = () => {
+const HomePageSearchBox: React.FC = () => {
     return (
-        <div className='homepage-pic'>
-            <div className='search-div'>
-                <div className='text-search-div'>Epicure works with the top chef restaurants in Tel Aviv</div>
-                <div className='input-container'>
-                    <input type="text" id='input' placeholder="Search for restaurant cuisine, chef"></input>
+        <div className='hero-pic-div'>
+            <div className='hero-div'>
+                <p>
+                    Epicure works with the top chef restaurants in Tel Aviv
+                </p>
+                <div className='input-search'>
+                    <input placeholder='Search for restaurant cuisine, chef' />
+                    <img style={{marginLeft: '15px'}} src='../images/mini_glass.jpeg' alt='Search Icon' />
                 </div>
             </div>
         </div>
     );
 }
 
-export default HomepageSearchBox;
+export default HomePageSearchBox;

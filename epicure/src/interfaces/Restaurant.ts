@@ -14,6 +14,7 @@ export interface Restaurant {
           price: number;
           sides: string[];
           changes: string[];
+          icon: string[];
       }[];
       lunch: {
           id: number; 
@@ -23,6 +24,7 @@ export interface Restaurant {
           price: number;
           sides: string[];
           changes: string[];
+          icon: string[];
       }[];
       dinner: {
           id: number; 
@@ -32,6 +34,7 @@ export interface Restaurant {
           price: number;
           sides: string[];
           changes: string[];
+          icon: string[];
       }[];
   };
   rating: number;

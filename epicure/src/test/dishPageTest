@@ -1,56 +1,149 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Restaurant } from "../interfaces/Restaurant";
+import "../ Assets /DishPage.scss";
 import { Dish } from "../interfaces/RestuarantDish";
+import { useOrder } from '../contexts/OrderContext';
 
 interface Props {
-  restaurants: Restaurant[];
+  restaurantsData: { restaurants: Restaurant[] };
 }
 
-const DishPage: React.FC<Props> = ({ restaurants }) => {
-  const { id, mealType } = useParams<{ id: string; mealType: string }>();
+const DishPage: React.FC<Props> = ({ restaurantsData }) => {
+  const { addToOrder } = useOrder();
 
-  // Provide a default value for mealType if it's undefined
-  const safeMealType = mealType || "breakfast";
+  const [quantity, setQuantity] = useState<number>(1);
+  const [selectedSide, setSelectedSide] = useState<string>("");
+  const [selectedChanges, setSelectedChanges] = useState<string[]>([]);
 
-  const findDish = (restaurantId: string, mealType: string, id: string): Dish | undefined => {
-    // Find the correct restaurant object
-    const restaurant = restaurants.find((r) => r.id.toString() === restaurantId);
-    if (!restaurant) return undefined;
+  const { restaurantId, mealType, dishId } = useParams<{
+    restaurantId: string;
+    mealType: string;
+    dishId: string;
+  }>();
 
-    // Find the dish based on meal type
-    return restaurant.dishes[mealType as keyof typeof restaurant.dishes].find((d) => d.id.toString() === id);
+  // Find the selected restaurant
+  const selectedRestaurant = restaurantsData.restaurants.find(
+    (restaurant) => restaurant.id.toString() === restaurantId
+  );
+
+  if (!selectedRestaurant) {
+    return <div>Restaurant not found</div>;
+  }
+
+  // Find the selected dish based on the meal type and dish ID
+  const selectedDishes =
+    selectedRestaurant.dishes[
+      mealType as keyof typeof selectedRestaurant.dishes
+    ];
+  const selectedDish = selectedDishes
+    ? selectedDishes.find((dish) => dish.id.toString() === dishId)
+    : undefined;
+
+  if (!selectedDish) {
+    return <div>Dish not found</div>;
+  }
+
+  const addToBagHandler = () => {
+    // Add the dish details to the order
+    const orderItem = {
+      restaurantName: selectedRestaurant.name,
+      dishName: selectedDish.name,
+      dishImage: selectedDish.image,
+      dishQuantity: quantity,
+      dishChanges: selectedChanges,
+      dishSide: selectedSide,
+      dishPrice: selectedDish.price * quantity,
+    };
+
+    addToOrder(orderItem);
   };
 
-  const dish = findDish(String(id), safeMealType, String(id))!; // Non-null assertion operator
 
-  console.log(dish.image)
-
+  // Render the selected dish
   return (
-    <div className="dish-page-container" key={dish.id}>
-      {/* <div className="dish-details" > */}
-        <img src={dish.image} alt={dish.name} />
-        <h2 className="dish-name">{dish.name}</h2>
-        <p className="dish-ingredients">{dish.ingredients}</p>
-      {/* </div> */}
-      <div className="options">
-        <div className="option">
-          <h3>Choose a Side:</h3>
-          <ul>
-            {dish.sides.map((side, index) => (
-              <li key={index}>{side}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="option">
-          <h3>Changes:</h3>
-          <ul>
-            {dish.changes.map((change, index) => (
-              <li key={index}>{change}</li>
-            ))}
-          </ul>
+    <div>
+      <img
+        className="dishPage-image"
+        src={`${process.env.PUBLIC_URL}${selectedDish.image}`}
+        alt={selectedDish.name}
+      />
+      <h3 className="dish-name">{selectedDish.name}</h3>
+      <p>{selectedDish.ingredients}</p>
+      <h3>₪{selectedDish.price}</h3>
+
+      <div>
+        <p className="label-line">Choose a side</p>
+        <div className="side-options">
+          {selectedDish.sides.map((side, index) => (
+            <div className="side-option" key={index}>
+              <input
+                type="radio"
+                id={`side${index}`}
+                name="side"
+                value={side}
+                onChange={() => setSelectedSide(side)}
+              />
+              <label htmlFor={`side${index}`}>{side}</label>
+            </div>
+          ))}
         </div>
       </div>
+
+      <div>
+        <p className="label-line">Changes:</p>
+        <div className="change-options">
+          {selectedDish.changes.map((change, index) => (
+            <div className="change-option" key={index}>
+              <input
+                type="checkbox"
+                id={`change${index}`}
+                name="change"
+                value={change}
+                onChange={(e) => {
+                  const selectedChange = e.target.value;
+                  if (selectedChanges.includes(selectedChange)) {
+                    setSelectedChanges((prev) =>
+                      prev.filter((change) => change !== selectedChange)
+                    );
+                  } else {
+                    setSelectedChanges((prev) => [...prev, selectedChange]);
+                  }
+                }}
+              />
+              <label htmlFor={`change${index}`}>
+                <span className="checkbox"></span>
+                {change}
+              </label>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <p className="label-line">Quantity:</p> <br />
+        <div className="signs">
+          <button onClick={() => setQuantity((prev) => Math.max(prev - 1, 1))}>
+            -
+          </button>
+          <h1>{quantity}</h1>
+          <button
+            style={{ fontSize: "30px" }}
+            onClick={() => setQuantity((prev) => prev + 1)}
+          >
+            +
+          </button>
+        </div>
+      </div>
+      <br />
+
+      <button className="add-to-bag-btn" onClick={addToBagHandler}>
+        ADD TO BAG
+      </button>
+      <br />
+      <br />
+      <br />
+      <hr style={{ border: "1px solid rgba(0, 0, 0, 0.05)" }} />
     </div>
   );
 };

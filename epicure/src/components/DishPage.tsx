@@ -1,24 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Restaurant } from "../interfaces/Restaurant";
 import "../ Assets /DishPage.scss";
-import { Dish } from "../interfaces/RestuarantDish";
+import { useOrder } from '../contexts/OrderContext';
 
 interface Props {
   restaurantsData: { restaurants: Restaurant[] };
 }
 
-const DishPage: React.FC<Props> = ({ restaurantsData }) => {
+const DishPage: React.FC<Props> = ({ restaurantsData}) => {
+   
+
+   // define for the responsive option
+   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
+
+   useEffect(() => {
+     const handleResize = () => {
+       setIsDesktop(window.innerWidth > 1024); 
+     };
+     window.addEventListener('resize', handleResize);
+ 
+     return () => {
+       window.removeEventListener('resize', handleResize);
+     };
+   }, []);
+
+  const { addToOrder, order , clearOrder} = useOrder();
+
+  const [quantity, setQuantity] = useState<number>(1);
+  const [selectedSide, setSelectedSide] = useState<string>("");
+  const [selectedChanges, setSelectedChanges] = useState<string[]>([]);
 
   const { restaurantId, mealType, dishId } = useParams<{
     restaurantId: string;
     mealType: string;
     dishId: string;
   }>();
-
-  const [quantity, setQuantity] = useState<number>(1);
-  const [selectedSide, setSelectedSide] = useState<string>("");
-  const [selectedChanges, setSelectedChanges] = useState<string[]>([]);
 
   // Find the selected restaurant
   const selectedRestaurant = restaurantsData.restaurants.find(
@@ -42,28 +59,71 @@ const DishPage: React.FC<Props> = ({ restaurantsData }) => {
     return <div>Dish not found</div>;
   }
 
-  // Function to handle adding the dish to the bag with selected preferences
-// Function to handle adding the dish to the bag with selected preferences
-const addToBag = () => {
- console.log(selectedDish.name)
-};
+  const addToBagHandler = () => {
+    if (order.length > 0) {
+      const existingOrderRestaurantId = order[0].restaurantId;
+      if (existingOrderRestaurantId !== restaurantId) {
+        // If the user tries to add a dish from a different restaurant, prompt for confirmation
+        const confirmation = window.confirm(`You can order only from one restaurant at a time. Do you want to change the order from ${order[0]?.restaurantName} to ${selectedRestaurant.name}?`);
+        if (confirmation) {
+          clearOrder();
+          addToOrderHandler();
+        }
+        return;
+      }
+    }
 
+    addToOrderHandler();
+  };
+
+  const addToOrderHandler = () => {
+    // Add the dish details to the order
+    const orderItem = {
+      restaurantId: selectedRestaurant.id.toString(),
+      restaurantName: selectedRestaurant.name,
+      dishName: selectedDish.name,
+      dishImage: selectedDish.image,
+      dishQuantity: quantity,
+      dishChanges: selectedChanges,
+      dishSide: selectedSide,
+      dishPrice: selectedDish.price * quantity,
+    };
+
+    addToOrder(orderItem);
+  };
 
   // Render the selected dish
   return (
-    <div>
+    
+    <div className="dish-page-main">
+    <div className="dish-popup-container">  
       <img
         className="dishPage-image"
         src={`${process.env.PUBLIC_URL}${selectedDish.image}`}
         alt={selectedDish.name}
       />
-      <h3 className="dish-name">{selectedDish.name}</h3>
-      <p>{selectedDish.ingredients}</p>
-      <h3>₪{selectedDish.price}</h3>
+      <p className="dish-page-dish-name">{selectedDish.name}</p>
+      <p className="dish-page-dish-ingredients">{selectedDish.ingredients}</p>
+     
+        {isDesktop && (
+          <div>
+             {selectedDish.icon.map((icon: string, index: number) => (
+            <img
+              key={index}
+              src={`../../public/images/Icons/${icon}.svg`}
+              alt={icon}
+              className="Carousel-dish-icon"
+            />
+             ))}
+          </div>
+        )}
 
+      <h3 className="dish-page-dish-price" style={{marginLeft: '15px'}}>₪{selectedDish.price}</h3><br />
+      
+      <div className="dish-page-second-container">
       <div>
-        <p className="label-line">Choose a side</p>
-        <div className="side-options">
+        <p className="label-line">Choose a side</p><br/>
+        <div className="dish-pages-all-sides">
           {selectedDish.sides.map((side, index) => (
             <div className="side-option" key={index}>
               <input
@@ -77,11 +137,11 @@ const addToBag = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> <br/>
 
       <div>
         <p className="label-line">Changes:</p>
-        <div className="change-options">
+        <div className="dish-page-all-changes">
           {selectedDish.changes.map((change, index) => (
             <div className="change-option" key={index}>
               <input
@@ -107,7 +167,7 @@ const addToBag = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div><br/>
 
       <div>
         <p className="label-line">Quantity:</p> <br />
@@ -124,15 +184,17 @@ const addToBag = () => {
           </button>
         </div>
       </div>
+      </div>
       <br />
 
-      <button className="add-to-bag-btn" onClick={addToBag}>
+      <button className="add-to-bag-btn" onClick={addToBagHandler}>
         ADD TO BAG
       </button>
       <br />
       <br />
       <br />
       <hr style={{ border: "1px solid rgba(0, 0, 0, 0.05)" }} />
+    </div>
     </div>
   );
 };

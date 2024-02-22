@@ -6,17 +6,17 @@ const HomePageIcons: React.FC = () => {
     return (
         <div className="icons-contanier">
             <p></p><br/>
-            <h2 className="sentcence">THE MEANING OF OUR ICONS: </h2> <br/>
-            <div style={{textAlign: "center"}}>
-            <div>
+            <p className="sentcence">THE MEANING OF OUR ICONS: </p> 
+            <div className="icons-wrapper">
+            <div className="icon-item">
                 <img src={`${path}spicy.svg`} alt="" />
                 <p>Spicy</p>
             </div> <br/><br/>
-            <div>
+            <div className="icon-item">
                 <img src={`${path}vegitarian.svg`}alt="" />
                 <p>Vegitarian</p>
             </div> <br/><br/>
-            <div>
+            <div className="icon-item">
                 <img src={`${path}vegan.svg`}  alt="" />
                 <p>Vegan</p>
             </div> 

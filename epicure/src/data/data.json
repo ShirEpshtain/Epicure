@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Claro",
-      "image": "../images/Restaurants/claro.png",
+      "image": "../images/Restaurants/claro1.svg",
       "chef": "Ran Shmueli",
       "openingHours": [
         { "day": 0, "open": "10:00", "close": "18:00" },
@@ -24,7 +24,48 @@
             "image": "/images/RestaurantsDishes/claro/claro_PadKiMao.png",
             "price": 88,
             "sides": ["White bread", "Sticky rice"],
-            "changes":["Whitout peanuts", "Sticky Less spicy"]
+            "changes":["Whitout peanuts", "Sticky Less spicy"],
+            "icon": ["spicy"]  
+          },
+          { 
+            "id": 2,
+            "name": "Eggs Benedict",
+            "ingredients": "Poached eggs, Canadian bacon, English muffins, Hollandaise sauce",
+            "image": "/images/RestaurantsDishes/claro/claro_EggsB.png",
+            "price": 52,
+            "sides": ["Hash browns", "Fruit salad"],
+            "changes": ["Substitute bacon for smoked salmon"],
+            "icon": ["vegan"]
+          },
+          { 
+            "id": 3,
+            "name": "Belgian Waffles",
+            "ingredients": "Waffle batter, whipped cream, strawberries, maple syrup",
+            "image": "/images/RestaurantsDishes/claro/claro_Waffles.png",
+            "price": 40,
+            "sides": ["Bacon", "Scrambled eggs"],
+            "changes": ["Add chocolate chips to the waffle batter"],
+            "icon": ["vegan"]
+          },
+          { 
+            "id": 4,
+            "name": "Breakfast Burrito",
+            "ingredients": "Scrambled eggs, sausage, cheese, salsa, tortilla",
+            "image": "/images/RestaurantsDishes/claro/claro_BreakfastB.png",
+            "price": 39,
+            "sides": ["Hash browns", "Sour cream"],
+            "changes": ["Add avocado slices"],
+            "icon": ["spicy"]
+          },
+          { 
+            "id": 5,
+            "name": "Pad Ki Mao",
+            "ingredients": "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+            "image": "/images/RestaurantsDishes/claro/claro_PadKiMao.png",
+            "price": 88,
+            "sides": ["White bread", "Sticky rice"],
+            "changes":["Whitout peanuts", "Sticky Less spicy"],
+            "icon": ["spicy"]
           }
         ],
         "lunch" :[
@@ -35,7 +76,48 @@
             "image": "/images/RestaurantsDishes/claro/claro_TaMaLaKo.png",
             "price": 65,
             "sides": ["White bread", "Sticky rice"],
-            "changes":["Whitout peanuts", "Sticky Less spicy"]
+            "changes":["Whitout peanuts", "Sticky Less spicy"],
+            "icon": ["spicy"]
+          },
+          { 
+            "id": 2,
+            "name": "Eggs Benedict",
+            "ingredients": "Poached eggs, Canadian bacon, English muffins, Hollandaise sauce",
+            "image": "/images/RestaurantsDishes/claro/claro_EggsB.png",
+            "price": 52,
+            "sides": ["Hash browns", "Fruit salad"],
+            "changes": ["Substitute bacon for smoked salmon"],
+            "icon": ["vegan"]
+          },
+          { 
+            "id": 3,
+            "name": "Belgian Waffles",
+            "ingredients": "Waffle batter, whipped cream, strawberries, maple syrup",
+            "image": "/images/RestaurantsDishes/claro/claro_Waffles.png",
+            "price": 40,
+            "sides": ["Bacon", "Scrambled eggs"],
+            "changes": ["Add chocolate chips to the waffle batter"],
+            "icon": ["vegan"]
+          },
+          { 
+            "id": 4,
+            "name": "Breakfast Burrito",
+            "ingredients": "Scrambled eggs, sausage, cheese, salsa, tortilla",
+            "image": "/images/RestaurantsDishes/claro/claro_BreakfastB.png",
+            "price": 39,
+            "sides": ["Hash browns", "Sour cream"],
+            "changes": ["Add avocado slices"],
+            "icon": ["spicy"]
+          },
+          { 
+            "id": 5,
+            "name": "Pad Ki Mao",
+            "ingredients": "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+            "image": "/images/RestaurantsDishes/claro/claro_PadKiMao.png",
+            "price": 88,
+            "sides": ["White bread", "Sticky rice"],
+            "changes":["Whitout peanuts", "Sticky Less spicy"],
+            "icon": ["spicy"]
           }
         ],
         "dinner" :[
@@ -46,7 +128,48 @@
             "image": "/images/RestaurantsDishes/claro/claro_RedFarm.png",
             "price": 65,
             "sides": ["White bread", "Sticky rice"],
-            "changes":["Whitout peanuts", "Sticky Less spicy"]
+            "changes":["Whitout peanuts", "Sticky Less spicy"],
+            "icon": ["spicy"]
+          },
+          { 
+            "id": 2,
+            "name": "Eggs Benedict",
+            "ingredients": "Poached eggs, Canadian bacon, English muffins, Hollandaise sauce",
+            "image": "/images/RestaurantsDishes/claro/claro_EggsB.png",
+            "price": 52,
+            "sides": ["Hash browns", "Fruit salad"],
+            "changes": ["Substitute bacon for smoked salmon"],
+            "icon": ["vegan"]
+          },
+          { 
+            "id": 3,
+            "name": "Belgian Waffles",
+            "ingredients": "Waffle batter, whipped cream, strawberries, maple syrup",
+            "image": "/images/RestaurantsDishes/claro/claro_Waffles.png",
+            "price": 40,
+            "sides": ["Bacon", "Scrambled eggs"],
+            "changes": ["Add chocolate chips to the waffle batter"],
+            "icon": ["vegan"]
+          },
+          { 
+            "id": 4,
+            "name": "Breakfast Burrito",
+            "ingredients": "Scrambled eggs, sausage, cheese, salsa, tortilla",
+            "image": "/images/RestaurantsDishes/claro/claro_BreakfastB.png",
+            "price": 39,
+            "sides": ["Hash browns", "Sour cream"],
+            "changes": ["Add avocado slices"],
+            "icon": ["spicy"]
+          },
+          { 
+            "id": 5,
+            "name": "Pad Ki Mao",
+            "ingredients": "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+            "image": "/images/RestaurantsDishes/claro/claro_PadKiMao.png",
+            "price": 88,
+            "sides": ["White bread", "Sticky rice"],
+            "changes":["Whitout peanuts", "Sticky Less spicy"],
+            "icon": ["spicy"]
           }
         ]
     },
@@ -77,7 +200,48 @@
             "image": "/images/RestaurantsDishes/claro/claro_PadKiMao.png",
             "price": 88,
             "sides": ["White bread", "Sticky rice"],
-            "changes":["Whitout peanuts", "Sticky Less spicy"]
+            "changes":["Whitout peanuts", "Sticky Less spicy"],
+            "icon": ["spicy"]
+          },
+          { 
+            "id": 2,
+            "name": "Eggs Benedict",
+            "ingredients": "Poached eggs, Canadian bacon, English muffins, Hollandaise sauce",
+            "image": "/images/RestaurantsDishes/claro/claro_EggsB.png",
+            "price": 52,
+            "sides": ["Hash browns", "Fruit salad"],
+            "changes": ["Substitute bacon for smoked salmon"],
+            "icon": ["vegan"]
+          },
+          { 
+            "id": 3,
+            "name": "Belgian Waffles",
+            "ingredients": "Waffle batter, whipped cream, strawberries, maple syrup",
+            "image": "/images/RestaurantsDishes/claro/claro_Waffles.png",
+            "price": 40,
+            "sides": ["Bacon", "Scrambled eggs"],
+            "changes": ["Add chocolate chips to the waffle batter"],
+            "icon": ["vegan"]
+          },
+          { 
+            "id": 4,
+            "name": "Breakfast Burrito",
+            "ingredients": "Scrambled eggs, sausage, cheese, salsa, tortilla",
+            "image": "/images/RestaurantsDishes/claro/claro_BreakfastB.png",
+            "price": 39,
+            "sides": ["Hash browns", "Sour cream"],
+            "changes": ["Add avocado slices"],
+            "icon": ["spicy"]
+          },
+          { 
+            "id": 5,
+            "name": "Pad Ki Mao",
+            "ingredients": "Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut",
+            "image": "/images/RestaurantsDishes/claro/claro_PadKiMao.png",
+            "price": 88,
+            "sides": ["White bread", "Sticky rice"],
+            "changes":["Whitout peanuts", "Sticky Less spicy"],
+            "icon": ["spicy"]
           }
         ],
         "lunch" :[
@@ -88,7 +252,28 @@
             "image": "/images/RestaurantsDishes/claro/claro_TaMaLaKo.png",
             "price": 65,
             "sides": ["White bread", "Sticky rice"],
-            "changes":["Whitout peanuts", "Sticky Less spicy"]
+            "changes":["Whitout peanuts", "Sticky Less spicy"],
+            "icon": ["spicy"]
+          },
+          { 
+            "id": 2,
+            "name": "Eggs Benedict",
+            "ingredients": "Poached eggs, Canadian bacon, English muffins, Hollandaise sauce",
+            "image": "/images/RestaurantsDishes/claro/claro_EggsB.png",
+            "price": 52,
+            "sides": ["Hash browns", "Fruit salad"],
+            "changes": ["Substitute bacon for smoked salmon"],
+            "icon": ["vegan"]
+          },
+          { 
+            "id": 3,
+            "name": "Belgian Waffles",
+            "ingredients": "Waffle batter, whipped cream, strawberries, maple syrup",
+            "image": "/images/RestaurantsDishes/claro/claro_Waffles.png",
+            "price": 40,
+            "sides": ["Bacon", "Scrambled eggs"],
+            "changes": ["Add chocolate chips to the waffle batter"],
+            "icon": ["vegan"]
           }
         ],
         "dinner" :[
@@ -99,7 +284,8 @@
             "image": "/images/RestaurantsDishes/claro/claro_RedFarm.png",
             "price": 65,
             "sides": ["White bread", "Sticky rice"],
-            "changes":["Whitout peanuts", "Sticky Less spicy"]
+            "changes":["Whitout peanuts", "Sticky Less spicy"],
+            "icon": ["spicy"]
           }
         ]
     },
@@ -110,7 +296,7 @@
       "id" : 3,
       "name": "Calata 15",
       "image": "../images/Restaurants/calata.png", 
-      "chef": "Rachel & Andrea Meggie",
+      "chef": "Rachel Meggie",
       "openingHours" :  [
           { "day": 0, "open": "10:00", "close": "18:00" },
           { "day": 1, "open": null, "close": null},
@@ -130,7 +316,8 @@
             "image": "/images/RestaurantsDishes/claro/claro_PadKiMao.png",
             "price": 88,
             "sides": ["White bread", "Sticky rice"],
-            "changes":["Whitout peanuts", "Sticky Less spicy"]
+            "changes":["Whitout peanuts", "Sticky Less spicy"],
+            "icon": ["spicy"]
           }
         ],
         "lunch" :[
@@ -141,7 +328,8 @@
             "image": "/images/RestaurantsDishes/claro/claro_TaMaLaKo.png",
             "price": 65,
             "sides": ["White bread", "Sticky rice"],
-            "changes":["Whitout peanuts", "Sticky Less spicy"]
+            "changes":["Whitout peanuts", "Sticky Less spicy"],
+            "icon": ["spicy"]
           }
         ],
         "dinner" :[
@@ -152,7 +340,8 @@
             "image": "/images/RestaurantsDishes/claro/claro_RedFarm.png",
             "price": 65,
             "sides": ["White bread", "Sticky rice"],
-            "changes":["Whitout peanuts", "Sticky Less spicy"]
+            "changes":["Whitout peanuts", "Sticky Less spicy"],
+            "icon": ["spicy"]
           }
         ]
     },
@@ -233,14 +422,14 @@
     {
       "id": 1,
       "name": "Pad Ki Mao",
-      "image": "../images/HomePage/Dishes/padKiMao.jpeg",
+      "image": "../images/HomePage/Dishes/padKiMao.png",
       "ingredients": "Shrimps, Glass <br> Noodles, Kemiri Nuts, <br> Shallots, <br> Lemon Grass, Magic <br> Chili Brown Coconut",
       "price": 88,
       "icons": ["spicy"]
     }, {
       "id" : 2,
       "name" : "Garbanzo Frito",
-      "image" : "../images/HomePage/Dishes/garbanzoFrito.jpeg",
+      "image" : "../images/HomePage/Dishes/garbanzoFrito.png",
       "ingredients" : "Polenta fingers, <br> veal cheek, magic <br> chili cured lemon cream, yellow laksa",
       "price" : 98,
       "icons" : ["spicy"]
@@ -248,7 +437,7 @@
   {
       "id" : 3,
       "name" : "Smoked Pizza",
-      "image" : "../images/HomePage/Dishes/smokedPizza.jpeg",
+      "image" : "../images/HomePage/Dishes/smokedPizza.png",
       "ingredients" : "Basil dough, <br> cashew 'butter', demi- <br> glace, bison & radish",
       "price" : 65,
       "icons" : ["vegan"]
@@ -260,7 +449,8 @@
       "name": "YOSSI SHITRIT",
       "private": "YOSSI",
       "image": "../images/Chefs/YossiS.png",
-      "description": "Chef Yossi Shitrit has been living and <br> breathing his culinary dreams for more <br> than two decades, including running <br> the kitchen in his first restaurant, the <br> fondly-remembered Violet, located in <br> Moshav Udim. Shitrit's creativity and <br> culinary acumen born of long <br> experience are expressed in the every <br> detail of each and every dish.",
+      "description": "Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades, including running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav Udim. Shitrit's creativity and culinary acumen born of long experience are expressed in the every detail of each and every dish.",
+      "description-copy": "Chef Yossi Shitrit has been living and <br> breathing his culinary dreams for more <br> than two decades, including running <br> the kitchen in his first restaurant, the <br> fondly-remembered Violet, located in <br> Moshav Udim. Shitrit's creativity and <br> culinary acumen born of long <br> experience are expressed in the every <br> detail of each and every dish.",
       "experience": 2,
       "rating": 8,
       "restaurants": [

@@ -10,6 +10,7 @@ interface Props {
 
 const SideMenu: React.FC<Props> = ({ handleClose , isOpen}) => {
     const navigate = useNavigate();
+    
     useEffect(() => {
         if (!isOpen) {
             handleClose();

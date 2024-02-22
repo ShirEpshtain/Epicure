@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Restaurant } from "../interfaces/Restaurant";
-import { Dish } from "../interfaces/RestuarantDish";
 import "../ Assets /RestaurantPage.scss";
 
 interface Props {
@@ -59,7 +58,7 @@ const RestaurantPage: React.FC<Props> = ({ restaurantsData }) => {
           </span>{" "}
           Closed Now
         </p>
-      )}
+      )} <br/>
       <div className="meals-buttons">
         <button
           onClick={() => handleMealChange("breakfast")}
@@ -79,15 +78,16 @@ const RestaurantPage: React.FC<Props> = ({ restaurantsData }) => {
         >
           Dinner
         </button>
-      </div>
+      </div> <br/>
       <div>
-      {restaurant.dishes[selectedMeal].map((dish) => (
+        {restaurant.dishes[selectedMeal].map((dish) => (
           <div className="restaurant-dish-card" key={dish.id}>
             <img src={dish.image} alt={dish.name} />
             <div>
               <h3 style={{ fontWeight: "bold" }}>
-                <Link to={`/dish/${selectedMeal}/${dish.id}`}>{dish.name}</Link>
+                <Link to={`/restaurant/${restaurant.id}/dish/${selectedMeal}/${dish.id}`}>{dish.name}</Link>
               </h3>
+
               <h2>{dish.ingredients}</h2>
               <div className="price-line">
                 <h3>₪{dish.price}</h3>
@@ -104,3 +104,4 @@ const RestaurantPage: React.FC<Props> = ({ restaurantsData }) => {
 };
 
 export default RestaurantPage;
+
